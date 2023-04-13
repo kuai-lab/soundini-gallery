@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="description.">
+  <meta property="og:title" content="Soundini: Sound-Guided Diffusion for Natural Video Editing"/>
+  <meta property="og:description" content="description"/>
+  <meta property="og:url" content="https://eoskjf123.github.io/"/>
+  <meta property="og:image" content="static/image/" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="Soundini: Sound-Guided Diffusion for Natural Video Editing">
+  <meta name="twitter:description" content="description">
+  <meta name="twitter:image" content="static/images/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="keywords">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Soundini: Sound-Guided Diffusion for Natural Video Editings</title>
+  <link rel="icon" type="image/x-icon" href="static/images/icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    }); </script>  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Soundini: Sound-Guided Diffusion for Natural Video Editing</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <!-- <span class="author-block">Anonymous</span> -->
+              
+             <span class="author-block">
+                Seung Hyun Lee<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Sieun Kim <sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Innfarn Yoo<sup>2</sup>,
+              </span>
+              <span class="author-block">
+                Feng Yang<sup>2</sup>,
+              </span>
+              <span class="author-block">
+                Donghyeon Cho<sup>1</sup>,
+              </span>
+               <span class="author-block">
+                Youngseo Kim<sup>1</sup>,
+              </span>
+              </span>
+               <span class="author-block">
+                Huiwen Chang<sup>2</sup>,
+              </span>
+              </span>
+               <span class="author-block">
+                Jinkyu Kim<sup>3,*</sup>,
+              </span>
+              </span>
+               <span class="author-block">
+                Sangpil Kim<sup>1,*</sup>
+              </span>
+             
+            </div>
+            
+            <!--
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Department of Artificial Intelligence and</span><span class="author-block"><sup>3</sup>CSE, Korea University</span>
+              <span class="author-block"><sup>2</sup>Google Research</span>
+            </div>
+            -->
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+            
+                <!-- code Link -->
+                <span class="link-block">
+                  <a href="https://github.com/" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                  </span>
+                  <span>Code (Coming Soon)</span>
+                </a>
+              </span>
+
+            <!-- ArXiv abstract Link -->
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- main carousel -->
+<section class="hero teaser">
+      <div class="hero-body ">
+    <div class="container is-max-desktop">
+  
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <img src="https://kr.object.ncloudstorage.com/soundini/video2.gif" loof=infinite style="margin-left: auto; margin-right: auto; display: block;"></img>
+          <h2 class="subtitle has-text-centered">
+          <br>
+          Example of Soundini
+        </div>
+        <div class="item item-video2" style="margin-top: auto; margin-bottom: auto; margin-left: auto; margin-right: auto; display: block;">
+          <img src="https://kr.object.ncloudstorage.com/soundini/video5.gif" alt="car-road" loof=infinite style="margin-top: auto; margin-bottom: auto; margin-left: auto; margin-right: auto; display: block;"></img>
+          <h2 class="subtitle has-text-centered">
+          <br>
+          Example of Soundini
+      </h2>
+        </div>
+        <div class="item item-video3" style="margin-top: auto; margin-bottom: auto; margin-left: auto; margin-right: auto; display: block;">
+          <img src="https://kr.object.ncloudstorage.com/soundini/video4.gif" alt="Crackling_fire-explosion" loof=infinite style="margin-top: auto; margin-bottom: auto; margin-left: auto; margin-right: auto; display: block;"></img>
+          <h2 class="subtitle has-text-centered">
+            <br>
+          Example of Soundini
+      </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End main carousel -->
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We propose a method for adding sound-guided visual effects to specific regions of videos with a zero-shot setting. Animating the appearance of the visual effect is challenging because each frame of the edited video should have visual changes while maintaining temporal consistency. Moreover, existing video editing solutions focus on temporal consistency across frames, ignoring the visual style variations over time, e.g., thunderstorm, wave, fire crackling. To overcome this limitation, we utilize temporal sound features for the dynamic style. Specifically, we guide denoising diffusion probabilistic models with an audio latent representation in the audio-visual latent space. To the best of our knowledge, our work is the first to explore sound-guided natural video editing from various sound sources with sound-specialized properties, such as intensity, timbre, and volume. Additionally, we design optical flow-based guidance to generate temporally consistent video frames, capturing the pixel-wise relationship between adjacent frames. Experimental results show that our method outperforms existing video editing techniques, producing more realistic visual effects that reflect the properties of sound. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Comparison with the extension of image editing works</h2>
+          <center>
+            <img src="https://kr.object.ncloudstorage.com/soundini/video6.gif" alt="wave" loof=infinite style="margin-left: auto; margin-right: auto; display: block;"></img>
+          </center>
+          <div class="level-set has-text-justified">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Context adaptive video editing</h2>
+          <center>
+            <img src="https://kr.object.ncloudstorage.com/soundini/video7.gif" alt="wave" loof=infinite style="margin-left: auto; margin-right: auto; display: block;"></img>
+          </center>
+          <div class="level-set has-text-justified">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Sound-guided video global editing</h2>
+          <center>
+            <img src="https://kr.object.ncloudstorage.com/soundini/video3.gif" alt="underwater_bubbling" loof=infinite style="margin-left: auto; margin-right: auto; display: block;"></img>
+          </center>
+          <div class="level-set has-text-justified">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero is-small is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Overview of Soundini</h2>
+          <center>
+          <img src="static/images/figure2_15-1.png" alt="Overview of Soundini" class="center-image blend-img-background"/>
+          </center>
+          <div class="level-set has-text-justified">
+            <p>
+              Soundini consists of two gradient-based guidance for diffusion: (a) Local Sound guidance and (b) Optical flow guidance. In (a), we match the appearance of the sampled frame with the sound in the mask region using the loss $\mathcal{L}_\text{SG}$ and $\mathcal{L}_\text{DSG}$. First, we minimize the cosine distance loss $\mathcal{L}_\text{SG}$ between the denoised frame and the sound segments in the audio-visual latent space. Additionally, the loss term $\mathcal{L}_\text{DSG}$ aligns the variation of frame latent representation and that of sound, capturing the transition of sound semantic and reaction. In (b), our optical flow guidance $\mathcal{L}_\text{flow}$ allows the sampled video to maintain temporal consistency by measuring the mean squared error between warped and sampled frames using optical flow. In particular, gradually increasing the influence on the loss  $\mathcal{L}_\text{flow}$ helps to stably sample the temporally consistent video. Background reconstruction loss $\mathcal{L}_\text{back}$ allows the background to be close to the source video.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Illustration of optical flow guidance for diffusion</h2>
+          <center>
+          <img src="static/images/figure3_9-1.png" alt="Illustration of optical flow guidance for diffusion" class="center-image"/>
+          </center>
+          <div class="level-set has-text-justified">
+            <p>
+              The frozen optical flow estimator produces bi-directional optical flows between the sampled frame $i$ and frame $i+1$. Then, we apply forward and backward warp to match each pixel and minimize the mean squared error between the adjacent and the corresponding warped frames.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{aaa
+  title={Soundini: Sound-Guided Diffusion for Natural Video Editing},
+  author={Anonymous},
+  year={2023}
+}</code></pre>
+  </div>
+</section>
+<!-- End BibTex citation -->
+
+<!--Acknowledgements -->
+<!-- <section class="section" id="Acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+      We thank. 
+  </div>
+</section> -->
+<!--End Acknowledgements -->
+  
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+
+
+<script type="text/javascript">
+var sc_project=12843789; 
+var sc_invisible=1; 
+var sc_security="e9c3bf5f"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/12843789/0/e9c3bf5f/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+
+<!-- End of Statcounter Code -->
+
+</body>
+</html>
